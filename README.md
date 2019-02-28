@@ -9,4 +9,4 @@ npm run start-dev
 
 go to http://localhost:3000
 
-see data/access.log
+see `data/access.log`
