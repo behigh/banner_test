@@ -49,11 +49,13 @@ import {UniqueId, webgl} from './utils/index'
 	 * Check each 0.5sec if new banner added (ex html generated from ajax request)
 	 */
 	setInterval(() => {
-		const calls = win[KEY] || []
-		delete win[KEY]
+		if (win[KEY]) {
+			const calls = win[KEY] || []
+			delete win[KEY]
 
-		for (let i = 0, len = calls.length; i < len; i++) {
-			getAdd(calls[i].id, calls[i].target)
+			for (let i = 0, len = calls.length; i < len; i++) {
+				getAdd(calls[i].id, calls[i].target)
+			}
 		}
 	}, 500)
 
