@@ -1,8 +1,6 @@
 const UniqueId = (length = 8) => {
 
-	const getRandomInt = (min, max) => {
-		return Math.floor(Math.random() * (max - min + 1)) + min
-	}
+	const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
 
 	const parts = (+new Date).toString().split('').reverse()
 	const parts_length = parts.length
