@@ -32,7 +32,11 @@ const log = (data, code = 200) => {
 				return data[key] || ''
 		}
 	})
-	fs.appendFile(file, dataToLog.join(divider) + os.EOL, () => {})
+	fs.appendFile(file, dataToLog.join(divider) + os.EOL, err => {
+		if (err) {
+			console.error(err)
+		}
+	})
 }
 
 module.exports.log = log
